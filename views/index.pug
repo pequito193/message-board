@@ -2,5 +2,11 @@ extends layout
 
 block content
   header.header
-    a.board(href="/")= 'Board'
-    a.new(href="/new")= 'New'
+    a(href="/")= 'Board'
+    a(href="/new")= 'New'
+
+  each message in messages
+    div.card 
+      div.wrapper
+        p.user-info #{message.user},   #{message.date}
+      p.message #{message.text}
