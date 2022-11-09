@@ -23,4 +23,22 @@ router.get('/', function(req, res, next) {
   res.render('index', {messages: messages});
 });
 
+
+/* GET and POST new message page */
+router.get('/new', function(req, res, next) {
+  res.render('new');
+});
+
+router.route('/new')
+  .post((req, res, next) => {
+    messages.push({
+      'user': req.body.name,
+      'text': req.body.message,
+      'date': dateTrimmer(new Date)
+    });
+    res.redirect('/');
+    console.log(messages);
+    next();
+  })
+
 module.exports = router;
