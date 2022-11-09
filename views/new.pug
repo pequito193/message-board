@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    header.header
+        a(href="/")= 'Board'
+        a(href="/new")= 'New'
+    
+    h1.title New Message
+
+    form.new-message-form(action="post") 
+        input.name-input(type="text" placeholder="Your Name")
+        textarea.message-input(type="text" maxlength='240' placeholder='Type here...')
+        button.submit Submit
