@@ -37,7 +37,6 @@ router.route('/new')
       'date': dateTrimmer(new Date)
     });
     res.redirect('/');
-    console.log(messages);
     next();
   })
 
